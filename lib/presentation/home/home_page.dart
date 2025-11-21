@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iot_ui/presentation/home/widgets/device_gridview.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,7 +48,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                       CircleAvatar(
                         minRadius: 32,
-
                         backgroundImage: AssetImage("assets/images/user.png"),
                       ),
                     ],
@@ -65,7 +65,48 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                     ),
                     child: Padding(
-                      padding:  EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "A total of 4 devices",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Living Room",
+                                    style: TextStyle(
+                                      height: 1.1,
+                                      fontSize: 17,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Icon(
+                                Icons.more_horiz,
+                                color: Colors.grey[300],
+                                size: 30,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 15),
+                          const DeviceGridView(),
+                        ],
+                      ),
                     ),
                   ),
                 )
